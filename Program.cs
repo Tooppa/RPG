@@ -2,7 +2,7 @@
 class RPG
 {
     static void Main()
-    {
+   {
 
     }
 }
