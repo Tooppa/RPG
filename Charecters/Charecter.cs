@@ -2,13 +2,13 @@
 
 internal abstract class Charecter
 {
-    string name { get; set; } = string.Empty;
-    int level { get; set; } = 0;
-    int baseStrenght { get; set; } = 0;
-    int baseDexterity { get; set; } = 0;
-    int baseIntelligence { get; set; } = 0;
-    int totalStrenght { get; set; } = 0;
-    int totalDexterity { get; set; } = 0;
-    int totalIntelligence { get; set; } = 0;
-    public abstract void LevelUp(int strength, int dexterity, int intelligence);
+    public string Name { get; set; } = string.Empty;
+    public int Level { get; set; } = 1;
+    public int BaseStrenght { get; set; } = 1;
+    public int BaseDexterity { get; set; } = 1;
+    public int BaseIntelligence { get; set; } = 1;
+    public int TotalStrenght { get; set; } = 1;
+    public int TotalDexterity { get; set; } = 1;
+    public int TotalIntelligence { get; set; } = 1;
+    public abstract void LevelUp();
 }

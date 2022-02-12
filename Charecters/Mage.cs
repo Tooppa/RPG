@@ -2,7 +2,11 @@
 {
     internal class Mage : Charecter
     {
-        public override void LevelUp(int strength, int dexterity, int intelligence)
+        Mage()
+        {
+            BaseIntelligence = 8;
+        }
+        public override void LevelUp()
         {
             throw new NotImplementedException();
         }

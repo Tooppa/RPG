@@ -2,7 +2,12 @@
 {
     internal class Rogue : Charecter
     {
-        public override void LevelUp(int strength, int dexterity, int intelligence)
+        Rogue()
+        {
+            BaseStrenght = 2;
+            BaseDexterity = 6;
+        }
+        public override void LevelUp()
         {
             throw new NotImplementedException();
         }

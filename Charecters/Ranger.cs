@@ -2,7 +2,11 @@
 {
     internal class Ranger : Charecter
     {
-        public override void LevelUp(int strength, int dexterity, int intelligence)
+        Ranger()
+        {
+            BaseDexterity = 7;
+        }
+        public override void LevelUp()
         {
             throw new NotImplementedException();
         }
