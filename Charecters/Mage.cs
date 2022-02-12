@@ -8,7 +8,9 @@
         }
         public override void LevelUp()
         {
-            throw new NotImplementedException();
+            BaseIntelligence += 5;
+            BaseDexterity += 1;
+            BaseStrenght += 1;
         }
     }
 }
