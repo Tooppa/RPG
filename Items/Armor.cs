@@ -1,15 +1,9 @@
-﻿namespace RPG.Items
+﻿using RPG.Types;
+
+namespace RPG.Items
 {
     internal class Armor : Item
     {
-        public enum Types
-        {
-            Cloth,
-            Leather,
-            Mail,
-            Plate,
-            Null
-        }
-        public Types Type { get; set; } = Types.Null;
+        public ArmorType Type { get; set; } = ArmorType.Null;
     }
 }
