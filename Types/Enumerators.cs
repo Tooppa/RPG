@@ -8,6 +8,14 @@
         Plate,
         Null
     }
+    public enum Slot
+    {
+        Head,
+        Body,
+        Legs,
+        Weapon,
+        Null
+    }
     public enum WeaponType
     {
         Axes,
