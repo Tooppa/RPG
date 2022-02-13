@@ -2,8 +2,8 @@
 {
     internal class Item
     {
-        string name { get; set; } = string.Empty;
-        int requredLevel { get; set; } = 0;
-        int slot { get; set; } = 0;
+        public string Name { get; set; } = string.Empty;
+        public int RequredLevel { get; set; } = 0;
+        public int Slot { get; set; } = 0;
     }
 }
