@@ -4,13 +4,9 @@
     {
         Mage()
         {
-            BaseIntelligence = 8;
         }
         public override void LevelUp()
         {
-            BaseIntelligence += 5;
-            BaseDexterity += 1;
-            BaseStrenght += 1;
         }
     }
 }
