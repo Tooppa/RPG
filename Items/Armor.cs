@@ -2,7 +2,7 @@
 
 namespace RPG.Items
 {
-    internal class Armor : Item
+    public class Armor : Item
     {
         public ArmorType Type { get; set; } = ArmorType.Null;
     }

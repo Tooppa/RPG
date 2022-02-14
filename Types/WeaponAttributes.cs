@@ -1,6 +1,6 @@
 ﻿namespace RPG.Types
 {
-    internal class WeaponAttributes
+    public class WeaponAttributes
     {
     }
 }
