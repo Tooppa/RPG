@@ -11,6 +11,7 @@ public abstract class Charecter
     private PrimaryAttributes TotalPrimaryAttributes { get; set; } = new PrimaryAttributes();
     public abstract void LevelUp();
     public abstract void EquipItem(Item item);
+    public abstract double GetDamage();
     public PrimaryAttributes GetTotalAttributes()
     { 
         return TotalPrimaryAttributes; 
