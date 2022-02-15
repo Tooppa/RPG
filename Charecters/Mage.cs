@@ -1,4 +1,6 @@
-﻿namespace RPG.Charecters
+﻿using RPG.Items;
+
+namespace RPG.Charecters
 {
     public class Mage : Charecter
     {
@@ -8,6 +10,12 @@
             BasePrimaryAttributes.Intelligence = 8;
             BasePrimaryAttributes.Strenght = 1;
         }
+
+        public override void EquipItem(Item item)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void LevelUp()
         {
             Level += 1;

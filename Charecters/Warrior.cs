@@ -1,4 +1,6 @@
-﻿namespace RPG.Charecters
+﻿using RPG.Items;
+
+namespace RPG.Charecters
 {
     public class Warrior : Charecter
     {
@@ -7,6 +9,11 @@
             BasePrimaryAttributes.Dexterity = 2;
             BasePrimaryAttributes.Intelligence = 1;
             BasePrimaryAttributes.Strenght = 5;
+        }
+
+        public override void EquipItem(Item item)
+        {
+            throw new NotImplementedException();
         }
 
         public override void LevelUp()
