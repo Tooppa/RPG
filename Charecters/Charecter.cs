@@ -2,7 +2,7 @@
 
 namespace RPG.Charecters;
 
-internal abstract class Charecter
+public abstract class Charecter
 {
     public string Name { get; set; } = string.Empty;
     public int Level { get; set; } = 1;

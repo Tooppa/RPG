@@ -1,8 +1,8 @@
 ﻿namespace RPG.Charecters
 {
-    internal class Mage : Charecter
+    public class Mage : Charecter
     {
-        Mage()
+        public Mage()
         {
             BasePrimaryAttributes.Dexterity = 1;
             BasePrimaryAttributes.Intelligence = 8;

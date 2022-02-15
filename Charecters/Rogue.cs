@@ -1,8 +1,8 @@
 ﻿namespace RPG.Charecters
 {
-    internal class Rogue : Charecter
+    public class Rogue : Charecter
     {
-        Rogue()
+        public Rogue()
         {
             BasePrimaryAttributes.Dexterity = 6;
             BasePrimaryAttributes.Intelligence = 1;

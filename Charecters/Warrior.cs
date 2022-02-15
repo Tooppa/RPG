@@ -1,8 +1,8 @@
 ﻿namespace RPG.Charecters
 {
-    internal class Warrior : Charecter
+    public class Warrior : Charecter
     {
-        Warrior()
+        public Warrior()
         {
             BasePrimaryAttributes.Dexterity = 2;
             BasePrimaryAttributes.Intelligence = 1;

@@ -1,8 +1,8 @@
 ﻿namespace RPG.Charecters
 {
-    internal class Ranger : Charecter
+    public class Ranger : Charecter
     {
-        Ranger()
+        public Ranger()
         {
             BasePrimaryAttributes.Dexterity = 7;
             BasePrimaryAttributes.Intelligence = 1;
