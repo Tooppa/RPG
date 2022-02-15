@@ -16,6 +16,11 @@ namespace RPG.Charecters
             throw new NotImplementedException();
         }
 
+        public override double GetDamage()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void LevelUp()
         {
             Level += 1;
