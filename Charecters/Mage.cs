@@ -10,6 +10,10 @@
         }
         public override void LevelUp()
         {
+            Level += 1;
+            BasePrimaryAttributes.Dexterity += 1;
+            BasePrimaryAttributes.Intelligence += 5;
+            BasePrimaryAttributes.Strenght += 1;
         }
     }
 }
