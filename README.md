@@ -18,8 +18,12 @@
    ```
 2. Open in Visual Studio
 
+<!-- About -->
+## About
+This project is mainly focused on the class structure and does not do anything. Its main purposes is to pass the tests made in the RPG_Tests project inside the main folder.
+
 <!-- Diagram -->
-## Diagram
+## Class Diagram
 
 ![diagram]
 
