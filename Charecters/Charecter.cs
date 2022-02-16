@@ -1,6 +1,6 @@
 ﻿using RPG.Items;
 using RPG.Types;
-using RPG.Execptions
+using RPG.Execptions;
 namespace RPG.Charecters;
 
 public abstract class Charecter
