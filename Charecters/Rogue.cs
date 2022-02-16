@@ -39,16 +39,22 @@ namespace RPG.Charecters
             {
                 if (weapon.Type == WeaponType.Dagger || weapon.Type == WeaponType.Sword)
                 {
-                    Items[weapon.Slot] = weapon;
+                    this.Weapon = weapon;
                     return "Weapon Success";
                 }
                 else throw new InvalidWeaponException();
             }
         }
-
         public override double GetDamage()
         {
-            throw new NotImplementedException();
+            double damage = 1;
+            if(Weapon != null && Weapon.Type != WeaponType.Null)
+            {
+                damage = Weapon.Attributes.Damage * Weapon.Attributes.Speed;
+                GetTotalAttributes();
+                damage *= (1 + TotalPrimaryAttributes.Dexterity/100.0);
+            }
+            return damage;
         }
 
         public override void LevelUp()

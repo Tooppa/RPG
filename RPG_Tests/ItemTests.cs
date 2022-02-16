@@ -92,10 +92,7 @@ namespace RPG_Tests
                 Type = WeaponType.Axe,
                 Attributes = new WeaponAttributes() { Damage = 7, Speed = 1.1 }
             };
-            Assert.Throws<InvalidWeaponException>(() =>
-            {
-                warrior.EquipWeapon(testAxe);
-            });
+            Assert.Equal("Weapon Success", warrior.EquipWeapon(testAxe));
         }
         [Fact]
         public void ItemEquip_ArmorEquippedCorrectly_CorrectSuccesMessage()
@@ -131,7 +128,8 @@ namespace RPG_Tests
                 Attributes = new WeaponAttributes() { Damage = 7, Speed = 1.1 }
             };
             warrior.EquipWeapon(testAxe);
-            warrior.GetDamage();
+            double expected = ((7 * 1.1)*(1 + (5 / 100.0)));
+            Assert.Equal(expected,warrior.GetDamage());
         }
         [Fact]
         public void Damage_DamageWithWeaponAndArmor_CorrectDamage()
@@ -155,7 +153,8 @@ namespace RPG_Tests
                 Attributes = new PrimaryAttributes() { Strenght = 1 }
             };
             warrior.EquipArmor(testPlateBody);
-            warrior.GetDamage();
+            double expected = ((7 * 1.1) * (1 + ((5 + 1) / 100.0)));
+            Assert.Equal(expected,warrior.GetDamage());
         }
     }
 }

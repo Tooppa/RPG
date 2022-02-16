@@ -38,7 +38,7 @@ namespace RPG.Charecters
             {
                 if (weapon.Type == WeaponType.Wand || weapon.Type == WeaponType.Staff)
                 {
-                    Items[weapon.Slot] = weapon;
+                    this.Weapon = weapon;
                     return "Weapon Success";
                 }
                 else throw new InvalidWeaponException();
@@ -47,7 +47,14 @@ namespace RPG.Charecters
 
         public override double GetDamage()
         {
-            throw new NotImplementedException();
+            double damage = 1;
+            if(Weapon != null && Weapon.Type != WeaponType.Null)
+            {
+                damage = Weapon.Attributes.Damage * Weapon.Attributes.Speed;
+                GetTotalAttributes();
+                damage *= (1 + TotalPrimaryAttributes.Intelligence/100.0);
+            }
+            return damage;
         }
 
         public override void LevelUp()
