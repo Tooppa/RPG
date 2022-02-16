@@ -1,4 +1,6 @@
-﻿using RPG.Items;
+﻿using RPG.Execptions;
+using RPG.Items;
+using RPG.Types;
 
 namespace RPG.Charecters
 {
@@ -10,10 +12,31 @@ namespace RPG.Charecters
             BasePrimaryAttributes.Intelligence = 8;
             BasePrimaryAttributes.Strenght = 1;
         }
-
-        public override void EquipItem(Item item)
+        public override string EquipArmor(Armor armor)
         {
-            throw new NotImplementedException();
+            if (armor.RequiredLevel > Level)
+            {
+                throw new InvalidArmorException();
+            }
+            else
+            {
+                if (armor.Type == ArmorType.Cloth)
+                    return "Success";
+                else throw new InvalidArmorException();
+            }
+        }
+        public override string EquipWeapon(Weapon weapon)
+        {
+            if (weapon.RequiredLevel > Level)
+            {
+                throw new InvalidWeaponException();
+            }
+            else
+            {
+                if (weapon.Type == WeaponType.Wand || weapon.Type == WeaponType.Staff)
+                    return "Success";
+                else throw new InvalidWeaponException();
+            }
         }
 
         public override double GetDamage()

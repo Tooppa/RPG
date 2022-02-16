@@ -23,7 +23,7 @@
         Dagger,
         Hammer,
         Staff,
-        Swors,
+        Sword,
         Wand,
         Null
     }

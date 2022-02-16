@@ -1,6 +1,5 @@
 ﻿using RPG.Items;
 using RPG.Types;
-
 namespace RPG.Charecters;
 
 public abstract class Charecter
@@ -9,11 +8,14 @@ public abstract class Charecter
     public int Level { get; set; } = 1;
     public PrimaryAttributes BasePrimaryAttributes { get; set; } = new PrimaryAttributes();
     private PrimaryAttributes TotalPrimaryAttributes { get; set; } = new PrimaryAttributes();
+    public Dictionary<Slot, Item> Items { get; set; }
     public abstract void LevelUp();
-    public abstract void EquipItem(Item item);
+    public abstract string EquipWeapon(Weapon weapon);
+    public abstract string EquipArmor(Armor armor);
     public abstract double GetDamage();
     public PrimaryAttributes GetTotalAttributes()
-    { 
+    {
+        TotalPrimaryAttributes = BasePrimaryAttributes;
         return TotalPrimaryAttributes; 
     }
     public string GetCharecterStats()

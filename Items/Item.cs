@@ -2,7 +2,7 @@
 
 namespace RPG.Items
 {
-    public class Item
+    public abstract class Item
     {
         public string Name { get; set; } = string.Empty;
         public int RequiredLevel { get; set; } = 0;

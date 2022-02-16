@@ -2,6 +2,8 @@ using Xunit;
 using RPG.Types;
 using RPG.Items;
 using RPG.Charecters;
+using System;
+using RPG.Execptions;
 
 namespace RPG_Tests
 {
@@ -19,8 +21,14 @@ namespace RPG_Tests
                 Type = WeaponType.Axe,
                 Attributes = new WeaponAttributes() { Damage = 7, Speed = 1.1 }
             };
-            warrior.EquipItem(testAxe);
+            Assert.Throws<InvalidWeaponException>(() =>
+            {
+                warrior.EquipWeapon(testAxe);
+            });
         }
+
+
+
         [Fact]
         public void ItemEquip_ArmorLevelIsTooHigh_InvalidArmorException()
         {
@@ -33,7 +41,10 @@ namespace RPG_Tests
                 Type = ArmorType.Plate,
                 Attributes = new PrimaryAttributes() { Strenght = 1 }
             };
-            warrior.EquipItem(testPlateBody);
+            Assert.Throws<InvalidArmorException>(() =>
+            {
+                warrior.EquipArmor(testPlateBody);
+            });
         }
         [Fact]
         public void ItemEquip_WeaponTypeIsIncorrect_InvalidWeaponException()
@@ -47,7 +58,10 @@ namespace RPG_Tests
                 Type = WeaponType.Bow,
                 Attributes = new WeaponAttributes() { Damage = 12, Speed = 0.8 }
             };
-            warrior.EquipItem(testBow);
+            Assert.Throws<InvalidWeaponException>(() =>
+            {
+                warrior.EquipWeapon(testBow);
+            });
         }
         [Fact]
         public void ItemEquip_ArmorTypeIsIncorrect_InvalidArmorException()
@@ -61,7 +75,10 @@ namespace RPG_Tests
                 Type = ArmorType.Cloth,
                 Attributes = new PrimaryAttributes() { Intelligence = 5 }
             };
-            warrior.EquipItem(testClothHead);
+            Assert.Throws<InvalidArmorException>(() =>
+            {
+                warrior.EquipArmor(testClothHead);
+            });
         }
         [Fact]
         public void ItemEquip_WeaponEquippedCorrectly_CorrectSuccesMessage()
@@ -75,7 +92,10 @@ namespace RPG_Tests
                 Type = WeaponType.Axe,
                 Attributes = new WeaponAttributes() { Damage = 7, Speed = 1.1 }
             };
-            warrior.EquipItem(testAxe);
+            Assert.Throws<InvalidWeaponException>(() =>
+            {
+                warrior.EquipWeapon(testAxe);
+            });
         }
         [Fact]
         public void ItemEquip_ArmorEquippedCorrectly_CorrectSuccesMessage()
@@ -89,12 +109,13 @@ namespace RPG_Tests
                 Type = ArmorType.Plate,
                 Attributes = new PrimaryAttributes() { Strenght = 1 }
             };
-            warrior.EquipItem(testPlateBody);
+            Assert.Equal("Success", warrior.EquipArmor(testPlateBody));
         }
         [Fact]
         public void Damage_DamageWithoutWeapon_CorrectDamage()
         {
             Warrior warrior = new Warrior();
+            string expected = (1 * (1 + (5 / 100))).ToString();
             warrior.GetDamage();
         }
         [Fact]
@@ -109,7 +130,7 @@ namespace RPG_Tests
                 Type = WeaponType.Axe,
                 Attributes = new WeaponAttributes() { Damage = 7, Speed = 1.1 }
             };
-            warrior.EquipItem(testAxe);
+            warrior.EquipWeapon(testAxe);
             warrior.GetDamage();
         }
         [Fact]
@@ -124,7 +145,7 @@ namespace RPG_Tests
                 Type = WeaponType.Axe,
                 Attributes = new WeaponAttributes() { Damage = 7, Speed = 1.1 }
             };
-            warrior.EquipItem(testAxe);
+            warrior.EquipWeapon(testAxe);
             Armor testPlateBody = new Armor()
             {
                 Name = "Common plate body armor",
@@ -133,7 +154,7 @@ namespace RPG_Tests
                 Type = ArmorType.Plate,
                 Attributes = new PrimaryAttributes() { Strenght = 1 }
             };
-            warrior.EquipItem(testPlateBody);
+            warrior.EquipArmor(testPlateBody);
             warrior.GetDamage();
         }
     }
