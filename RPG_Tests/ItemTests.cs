@@ -109,14 +109,14 @@ namespace RPG_Tests
                 Type = ArmorType.Plate,
                 Attributes = new PrimaryAttributes() { Strenght = 1 }
             };
-            Assert.Equal("Success", warrior.EquipArmor(testPlateBody));
+            Assert.Equal("Armor Success", warrior.EquipArmor(testPlateBody));
         }
         [Fact]
         public void Damage_DamageWithoutWeapon_CorrectDamage()
         {
             Warrior warrior = new Warrior();
-            string expected = (1 * (1 + (5 / 100))).ToString();
-            warrior.GetDamage();
+            double expected = (1 * (1 + (5 / 100)));
+            Assert.Equal(expected,warrior.GetDamage());
         }
         [Fact]
         public void Damage_DamageWithWeapon_CorrectDamage()

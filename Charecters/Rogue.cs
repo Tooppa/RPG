@@ -22,7 +22,10 @@ namespace RPG.Charecters
             else
             {
                 if (armor.Type == ArmorType.Mail || armor.Type == ArmorType.Leather)
-                    return "Success";
+                {
+                    Items[armor.Slot] = armor;
+                    return "Armor Success";
+                }
                 else throw new InvalidArmorException();
             }
         }
@@ -35,7 +38,10 @@ namespace RPG.Charecters
             else
             {
                 if (weapon.Type == WeaponType.Dagger || weapon.Type == WeaponType.Sword)
-                    return "Success";
+                {
+                    Items[weapon.Slot] = weapon;
+                    return "Weapon Success";
+                }
                 else throw new InvalidWeaponException();
             }
         }
